@@ -5,7 +5,9 @@ app.get('/', function(req, res){
 	res.sendFile(__dirname + '/index.html');
 });
 io.on('connection', function(socket){
-	io.emit('start',{'jsonmsg':'1 more user CONNECTED!!'});
+	socket.on('register',function(name){
+	io.emit('start',{'jsonmsg':''+name+' is now CONNECTED. Say Hello!'});
+	});
 	socket.on('chat message', function(msg){
 		io.emit('chat message', msg);
 	});
