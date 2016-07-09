@@ -1,7 +1,7 @@
 {
-  "name": "socket-chat-example",
+  "name": "chatApp",
   "version": "0.0.1",
-  "description": "my first socket.io app",
+  "description": "my first real-time experience :p",
   "author": "Aditi Mishra",
   "dependencies": {
     "express": "^4.10.2",
