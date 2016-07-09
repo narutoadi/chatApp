@@ -8,8 +8,8 @@ io.on('connection', function(socket){
 	socket.on('register',function(name){
 	io.emit('start',{'jsonmsg':''+name+' is now CONNECTED. Say Hello!'});
 	});
-	socket.on('chat message', function(msg){
-		io.emit('chat message', msg);
+	socket.on('chat message', function(data){
+		io.emit('chat message', {'name': data.name,'msg':data.msg});
 	});
 	console.log('a user connected');
 	socket.on('disconnect', function(){
